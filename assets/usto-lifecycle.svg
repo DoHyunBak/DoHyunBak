@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 336" role="img" aria-labelledby="t d">
+  <title id="t">U-sto 자산 생애주기와 결재</title>
+  <desc id="d">자산은 취득, 운용, 반납, 불용, 처분 순서로 이동하고 반납에서 운용으로 돌아갈 수 있습니다. 모든 신청은 WAIT, REQUEST를 거쳐 APPROVED 또는 REJECTED가 되며 요청을 취소하면 소프트 삭제됩니다.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { stroke-dasharray: 7 93; animation: flow 3.2s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes flow { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .ants { animation: none; } .pulse { display: none; } }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#8b949e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#ff7b72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="899" height="335" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <rect x="24" y="138" width="852" height="184" rx="12" fill="none" stroke="#2a323c" stroke-dasharray="3 4"/>
+  <text class="sans" x="38" y="158" font-size="11.5" font-weight="600" letter-spacing=".4" fill="#8b949e">모든 신청의 공통 결재</text>
+  <path d="M156 67 L204 67" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M156 67 L204 67" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.00s"/>
+  <path d="M336 67 L384 67" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M336 67 L384 67" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.53s"/>
+  <path d="M516 67 L564 67" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M516 67 L564 67" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.06s"/>
+  <path d="M696 67 L744 67" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M696 67 L744 67" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.59s"/>
+  <path d="M450 96 L450 110 Q450 118 442 118 L278 118 Q270 118 270 110 L270 97" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M450 96 L450 110 Q450 118 442 118 L278 118 Q270 118 270 110 L270 97" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.12s"/>
+  <path d="M226 230 L326 230" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M226 230 L326 230" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.65s"/>
+  <path d="M496 230 L532 230 Q540 230 540 222 L540 194 Q540 186 548 186 L620 186" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M496 230 L532 230 Q540 230 540 222 L540 194 Q540 186 548 186 L620 186" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-3.18s"/>
+  <path d="M496 230 L620 230" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M496 230 L620 230" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.51s"/>
+  <path class="ants" d="M496 230 L532 230 Q540 230 540 238 L540 266 Q540 274 548 274 L620 274" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <text class="sans" x="24" y="26" font-size="11.5" font-weight="600" fill="#8b949e">자산 생애주기</text>
+  <g class="card"><rect x="24" y="38" width="132" height="58" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="90" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">취득</text><text class="mono" x="90" y="82.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">acquisitions</text></g>
+  <g class="card"><rect x="204" y="38" width="132" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="270" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">운용</text><text class="mono" x="270" y="82.5" text-anchor="middle" font-size="11.5" fill="#c6e478">operations</text></g>
+  <g class="card"><rect x="384" y="38" width="132" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="450" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">반납</text><text class="mono" x="450" y="82.5" text-anchor="middle" font-size="11.5" fill="#c6e478">returnings</text></g>
+  <g class="card"><rect x="564" y="38" width="132" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="630" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">불용</text><text class="mono" x="630" y="82.5" text-anchor="middle" font-size="11.5" fill="#c6e478">disuses</text></g>
+  <g class="card"><rect x="744" y="38" width="132" height="58" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="810" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">처분</text><text class="mono" x="810" y="82.5" text-anchor="middle" font-size="11.5" fill="#c792ea">disposals</text></g>
+  <g class="card"><rect x="56" y="196" width="170" height="68" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="141" y="218.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">WAIT</text><text class="sans" x="141" y="237.5" text-anchor="middle" font-size="12" fill="#6fb6d8">작성 중</text><text class="sans" x="141" y="253.5" text-anchor="middle" font-size="12" fill="#6fb6d8">수정 · 삭제 가능</text></g>
+  <g class="card"><rect x="326" y="196" width="170" height="68" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="411" y="226.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">REQUEST</text><text class="sans" x="411" y="245.5" text-anchor="middle" font-size="12" fill="#6fb6d8">승인 요청 상태</text></g>
+  <g class="card"><rect x="620" y="166" width="224" height="40" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="732" y="190.5" text-anchor="middle" font-size="13.5" font-weight="600" fill="#e6edf3">APPROVED · 승인 확정</text></g>
+  <g class="card"><rect x="620" y="210" width="224" height="40" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="732" y="234.5" text-anchor="middle" font-size="13.5" font-weight="600" fill="#e6edf3">REJECTED · 반려</text></g>
+  <g class="card"><rect x="620" y="254" width="224" height="40" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="732" y="278.5" text-anchor="middle" font-size="13.5" font-weight="600" fill="#e6edf3">소프트 삭제</text></g>
+  <rect x="338.8" y="109" width="42.3" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="360" y="121" text-anchor="middle" font-size="11" fill="#aab4bf">재운용</text>
+  <rect x="247.8" y="221" width="56.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="276" y="233" text-anchor="middle" font-size="11" fill="#aab4bf">승인 요청</text>
+  <rect x="564.2" y="177" width="31.6" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="580" y="189" text-anchor="middle" font-size="11" fill="#aab4bf">승인</text>
+  <rect x="564.2" y="221" width="31.6" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="580" y="233" text-anchor="middle" font-size="11" fill="#aab4bf">반려</text>
+  <rect x="564.2" y="265" width="31.6" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="580" y="277" text-anchor="middle" font-size="11" fill="#ff9b94">취소</text>
+</svg>

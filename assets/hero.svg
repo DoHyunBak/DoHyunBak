@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 290" role="img" aria-labelledby="t d">
+  <title id="t">박도현 Park Do-hyun</title>
+  <desc id="d">조용한 실패까지 책임지는 개발자. Developer across systems, game, AI and product. 입력, 경계, 핵심 처리, 출력, 실패 경로로 이어지는 파이프라인 그림.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .spin-a, .spin-b, .spin-c { transform-origin: 806px 104px; }
+    .spin-a { animation: spin 38s linear infinite; }
+    .spin-b { animation: spin 22s linear infinite reverse; }
+    .spin-c { animation: spin 13s linear infinite; }
+    .breath { transform-origin: 806px 104px; animation: breath 4.6s ease-in-out infinite; }
+    .pulse { stroke-dasharray: 34 866; animation: flow 6s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes breath { 0%, 100% { opacity: .55; transform: scale(.92); } 50% { opacity: 1; transform: scale(1.08); } }
+    @keyframes flow { from { stroke-dashoffset: 900; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) {
+      .spin-a, .spin-b, .spin-c, .breath, .ants { animation: none; }
+      .pulse { display: none; }
+    }
+  </style>
+  <defs>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="#2a323c"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset=".34" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="fade-mask"><rect width="1000" height="290" fill="url(#fade)"/></mask>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#c6e478" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#c6e478" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x=".5" y=".5" width="999" height="289" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <rect x="1" y="1" width="998" height="288" rx="14" fill="url(#dots)" mask="url(#fade-mask)"/>
+
+  <!-- neural core -->
+  <circle cx="806" cy="104" r="104" fill="url(#glow)"/>
+  <g fill="none" stroke-linecap="round">
+    <circle class="spin-a" cx="806" cy="104" r="78" stroke="#c6e478" stroke-opacity=".3" stroke-dasharray="2 9"/>
+    <circle class="spin-b" cx="806" cy="104" r="58" stroke="#6fb6d8" stroke-opacity=".55" stroke-dasharray="46 24 8 24"/>
+    <circle class="spin-c" cx="806" cy="104" r="38" stroke="#c6e478" stroke-opacity=".85" stroke-width="1.5" stroke-dasharray="66 34"/>
+  </g>
+  <circle class="breath" cx="806" cy="104" r="12" fill="#c6e478"/>
+
+  <!-- identity -->
+  <text class="mono" x="48" y="58" font-size="12.5" font-weight="600" letter-spacing="2.6" fill="#c6e478">SYSTEMS / GAME / AI / PRODUCT</text>
+  <text class="sans" x="46" y="125" font-size="62" font-weight="800" fill="#ffffff">박도현</text>
+  <text class="mono" x="246" y="125" font-size="19" fill="#8b949e">Park Do-hyun</text>
+  <text class="sans" x="48" y="169" font-size="25" font-weight="600" fill="#e6edf3">조용한 실패까지 책임지는 개발자</text>
+  <text class="mono" x="48" y="197" font-size="13.5" fill="#8b949e">Developer across systems, game, AI and product.</text>
+
+  <!-- pipeline rail -->
+  <path d="M48 244 H952" stroke="#2a323c" stroke-width="2"/>
+  <path class="pulse" d="M48 244 H952" stroke="#c6e478" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path class="ants" d="M500 244 C 500 270, 700 270, 952 244" stroke="#ff7b72" stroke-opacity=".75" fill="none"/>
+  <g class="mono" font-size="10.5" font-weight="600" letter-spacing="1.4" text-anchor="middle">
+    <circle cx="48" cy="244" r="5" fill="#0a0d12" stroke="#ecc48d" stroke-width="2"/>
+    <circle cx="274" cy="244" r="5" fill="#0a0d12" stroke="#6fb6d8" stroke-width="2"/>
+    <circle cx="500" cy="244" r="5" fill="#0a0d12" stroke="#c6e478" stroke-width="2"/>
+    <circle cx="726" cy="244" r="5" fill="#0a0d12" stroke="#c792ea" stroke-width="2"/>
+    <circle cx="952" cy="244" r="5" fill="#0a0d12" stroke="#ff7b72" stroke-width="2"/>
+    <text x="48" y="229" text-anchor="start" fill="#ecc48d">INPUT</text>
+    <text x="274" y="229" fill="#6fb6d8">BOUNDARY</text>
+    <text x="500" y="229" fill="#c6e478">CORE</text>
+    <text x="726" y="229" fill="#c792ea">OUTPUT</text>
+    <text x="952" y="229" text-anchor="end" fill="#ff7b72">FAILURE PATH</text>
+  </g>
+</svg>

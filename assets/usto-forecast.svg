@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 386" role="img" aria-labelledby="t d">
+  <title id="t">U-sto AI 수요 예측 파이프라인</title>
+  <desc id="d">요청을 ForecastPolicy로 검증하고 AI 전송 전용 DTO로 바꿔 AI 서버를 호출합니다. 2xx 응답은 원문을 로깅한 뒤 Jackson으로 파싱하고, 네 섹션이 모두 비면 거부하며, 통과한 결과만 저장합니다. 4xx와 5xx, 파싱 실패, 빈 응답은 예외로 중단되어 저장되지 않습니다.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { stroke-dasharray: 7 93; animation: flow 3.2s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes flow { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .ants { animation: none; } .pulse { display: none; } }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#8b949e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#ff7b72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="899" height="385" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <path d="M210 75 L246 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M210 75 L246 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.00s"/>
+  <path d="M432 75 L468 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M432 75 L468 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.53s"/>
+  <path d="M654 75 L690 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M654 75 L690 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.06s"/>
+  <path d="M740 110 L740 135 Q740 143 732 143 L125 143 Q117 143 117 151 L117 176" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M740 110 L740 135 Q740 143 732 143 L125 143 Q117 143 117 151 L117 176" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.59s"/>
+  <path d="M210 211 L246 211" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M210 211 L246 211" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.12s"/>
+  <path d="M432 211 L468 211" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M432 211 L468 211" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.65s"/>
+  <path class="ants" d="M826 110 L826 300" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path class="ants" d="M117 246 L117 300" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path class="ants" d="M339 246 L339 300" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <text class="sans" x="24" y="27" font-size="11.5" font-weight="600" fill="#8b949e">요청 · 경계</text><text class="sans" x="24" y="163" font-size="11.5" font-weight="600" fill="#8b949e">응답 검증 · 저장</text>
+  <g class="card"><rect x="24" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="117" y="71.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">POST /api/ai/forecast</text><text class="sans" x="117" y="90.5" text-anchor="middle" font-size="12" fill="#ecc48d">조건 + 프롬프트</text></g>
+  <g class="card"><rect x="246" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="339" y="71.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">ForecastPolicy</text><text class="sans" x="339" y="90.5" text-anchor="middle" font-size="12" fill="#6fb6d8">요청 · 조직 검증</text></g>
+  <g class="card"><rect x="468" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="561" y="71.5" text-anchor="middle" font-size="13.5" font-weight="600" fill="#e6edf3">AiForecastRequestToAi</text><text class="sans" x="561" y="90.5" text-anchor="middle" font-size="12" fill="#6fb6d8">AI 전송 전용 DTO</text></g>
+  <g class="card"><rect x="690" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="783" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">AI 서버</text><text class="mono" x="783" y="82.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">WebClient</text><text class="sans" x="783" y="98.5" text-anchor="middle" font-size="12" fill="#ecc48d">AI팀 운영</text></g>
+  <g class="card"><rect x="24" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="117" y="207.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Jackson 파싱</text><text class="sans" x="117" y="226.5" text-anchor="middle" font-size="12" fill="#c6e478">원문 로깅 후 역직렬화</text></g>
+  <g class="card"><rect x="246" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="339" y="207.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">빈 분석 거부</text><text class="sans" x="339" y="226.5" text-anchor="middle" font-size="12" fill="#c6e478">네 섹션 모두 비면 예외</text></g>
+  <g class="card"><rect x="468" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="561" y="207.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Forecast 저장</text><text class="sans" x="561" y="226.5" text-anchor="middle" font-size="12" fill="#c792ea">JSON 섹션 · 조건 · 프롬프트</text></g>
+  <g class="card"><rect x="24" y="300" width="852" height="70" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="44" y="330" font-size="15" font-weight="600" fill="#e6edf3">예외로 중단 · 저장 없음</text><text class="sans" x="44" y="349" font-size="11.5" fill="#ff7b72">상태 코드별 BusinessException</text></g>
+  <rect x="396" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="412.4" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">400</text>
+  <rect x="433.9" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="450.3" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">401</text>
+  <rect x="471.79999999999995" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="488.2" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">403</text>
+  <rect x="509.69999999999993" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="526.1" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">404</text>
+  <rect x="547.5999999999999" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="564.0" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">422</text>
+  <rect x="585.4999999999999" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="601.9" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">429</text>
+  <rect x="623.3999999999999" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="639.8" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">502</text>
+  <rect x="661.2999999999998" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="677.7" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">503</text>
+  <rect x="699.1999999999998" y="324" width="32.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="715.6" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">504</text>
+  <rect x="737.0999999999998" y="324" width="95.9" height="22" rx="6" fill="#11161d" stroke="#ff7b72" stroke-opacity=".5"/><text class="mono" x="785.0" y="339" text-anchor="middle" font-size="10.5" fill="#ff7b72">ngrok offline</text>
+  <rect x="415.6" y="134" width="28.9" height="16" rx="3" fill="#0a0d12"/>
+  <text class="mono" x="430" y="146" text-anchor="middle" font-size="10.5" fill="#aab4bf">2xx</text>
+  <rect x="792.6" y="196" width="66.7" height="16" rx="3" fill="#0a0d12"/>
+  <text class="mono" x="826" y="208" text-anchor="middle" font-size="10.5" fill="#ff9b94">4xx · 5xx</text>
+  <rect x="88.8" y="264" width="56.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="117" y="276" text-anchor="middle" font-size="11" fill="#ff9b94">파싱 실패</text>
+  <rect x="316.2" y="264" width="45.6" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="339" y="276" text-anchor="middle" font-size="11" fill="#ff9b94">빈 응답</text>
+</svg>

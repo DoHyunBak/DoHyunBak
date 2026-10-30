@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" role="img" aria-labelledby="t d">
+  <title id="t">DOVIS 응답 파이프라인</title>
+  <desc id="d">방문자 질문은 입력 정제와 1.5초 제한을 거쳐 POST /api/chat으로 갑니다. 서버는 Spring AI와 RAG로 답합니다. 응답이 유효하면 Three.js Neural Core로 보여 주고, 오류, timeout, 빈 응답이면 클라이언트의 키워드 지식 베이스로 대체합니다.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { stroke-dasharray: 7 93; animation: flow 3.2s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes flow { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .ants { animation: none; } .pulse { display: none; } }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#8b949e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#ff7b72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="899" height="369" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <path d="M210 73 L246 73" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M210 73 L246 73" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.00s"/>
+  <path d="M432 73 L468 73" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M432 73 L468 73" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.53s"/>
+  <path d="M654 73 L690 73" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M654 73 L690 73" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.06s"/>
+  <path d="M783 106 L783 164" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M783 106 L783 164" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.59s"/>
+  <path d="M690 197 L654 197" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M690 197 L654 197" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.12s"/>
+  <path d="M468 197 L210 197" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M468 197 L210 197" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.65s"/>
+  <path class="ants" d="M561 230 L561 286" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path class="ants" d="M246 319 L125 319 Q117 319 117 311 L117 231" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <text class="sans" x="24" y="27" font-size="11.5" font-weight="600" fill="#8b949e">브라우저</text><text class="sans" x="24" y="151" font-size="11.5" font-weight="600" fill="#8b949e">응답 · 3D 코어</text><text class="sans" x="24" y="273" font-size="11.5" font-weight="600" fill="#8b949e">클라이언트 폴백</text>
+  <g class="card"><rect x="24" y="40" width="186" height="66" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="117" y="69.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">방문자 질문</text><text class="sans" x="117" y="88.5" text-anchor="middle" font-size="12" fill="#ecc48d">최대 300자</text></g>
+  <g class="card"><rect x="246" y="40" width="186" height="66" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="339" y="69.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">입력 정제</text><text class="sans" x="339" y="88.5" text-anchor="middle" font-size="12" fill="#6fb6d8">제어문자 제거 · trim</text></g>
+  <g class="card"><rect x="468" y="40" width="186" height="66" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="561" y="69.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">1.5초 제한</text><text class="sans" x="561" y="88.5" text-anchor="middle" font-size="12" fill="#6fb6d8">연속 요청은 안내 후 종료</text></g>
+  <g class="card"><rect x="690" y="40" width="186" height="66" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="783" y="69.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">POST /api/chat</text><text class="mono" x="783" y="88.5" text-anchor="middle" font-size="11.5" fill="#6fb6d8">timeout 30s</text></g>
+  <g class="card"><rect x="690" y="164" width="186" height="66" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="783" y="185.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Spring AI · RAG</text><text class="mono" x="783" y="204.5" text-anchor="middle" font-size="11.5" fill="#c6e478">Spring Boot 3</text><text class="mono" x="783" y="220.5" text-anchor="middle" font-size="11.5" fill="#c6e478">api.parkdohyun.com</text></g>
+  <g class="card"><rect x="468" y="164" width="186" height="66" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="561" y="193.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">응답 판별</text><text class="sans" x="561" y="212.5" text-anchor="middle" font-size="12" fill="#6fb6d8">비어 있지 않은 reply</text></g>
+  <g class="card"><rect x="24" y="164" width="186" height="66" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="117" y="185.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Neural Core</text><text class="mono" x="117" y="204.5" text-anchor="middle" font-size="11.5" fill="#c792ea">Three.js</text><text class="mono" x="117" y="220.5" text-anchor="middle" font-size="10.5" fill="#c792ea">thinking · speaking · idle</text></g>
+  <g class="card"><rect x="246" y="286" width="408" height="66" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="450" y="315.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Client Knowledge Base</text><text class="sans" x="450" y="334.5" text-anchor="middle" font-size="12" fill="#ff7b72">키워드 매칭 · 매칭이 없으면 기본 소개 응답</text></g>
+  <rect x="300.2" y="188" width="77.5" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="339" y="200" text-anchor="middle" font-size="11" fill="#aab4bf">유효한 reply</text>
+  <rect x="492.1" y="249" width="137.8" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="561" y="261" text-anchor="middle" font-size="11" fill="#ff9b94">오류 · timeout · 빈 응답</text>
+  <rect x="141.8" y="310" width="56.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="170" y="322" text-anchor="middle" font-size="11" fill="#ff9b94">대체 응답</text>
+</svg>

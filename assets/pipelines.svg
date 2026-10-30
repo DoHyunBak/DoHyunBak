@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 482" role="img" aria-labelledby="t d">
+  <title id="t">One Shape, Four Systems</title>
+  <desc id="d">네 시스템의 공통 파이프라인. 입력, 경계, 핵심 처리, 출력, 실패 경로 순서. U-sto: 조달청 OpenAPI, 변환 · 중복 제거, Staging 병합, 자산 마스터, Sync History. W브릿지: AI 응답, 파싱 · 형식 점검, 호출 · 저장 분리, 리포트 · 추천, 빈 결과 허용. DOVIS: 방문자 질문, 입력 정제 · 제한, RAG 파이프라인, 3D 코어 응답, 키워드 지식 베이스. Kids Friends: 센서 허브, 이벤트 계약, Spring Boot 중계, 로봇 앱 방송, Arduino 백업 허브.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { stroke-dasharray: 7 93; animation: flow 3.2s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes flow { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .ants { animation: none; } .pulse { display: none; } }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#8b949e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#ff7b72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="999" height="481" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <path d="M278 113 L653 113" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M278 113 L653 113" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.00s"/>
+  <path class="ants" d="M553 142 L553 150 Q553 158 561 158 L895 158 Q903 158 903 151 L903 144" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path d="M278 211 L653 211" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M278 211 L653 211" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.53s"/>
+  <path class="ants" d="M553 240 L553 248 Q553 256 561 256 L895 256 Q903 256 903 249 L903 242" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path d="M278 309 L653 309" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M278 309 L653 309" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.06s"/>
+  <path class="ants" d="M553 338 L553 346 Q553 354 561 354 L895 354 Q903 354 903 347 L903 340" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <path d="M278 407 L653 407" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M278 407 L653 407" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.59s"/>
+  <path class="ants" d="M203 436 L203 444 Q203 452 211 452 L895 452 Q903 452 903 445 L903 438" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <text class="mono" x="203" y="34" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#ecc48d">INPUT</text>
+  <text class="sans" x="203" y="53" text-anchor="middle" font-size="12" fill="#8b949e">믿을 수 없는 입력</text>
+  <text class="mono" x="378" y="34" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#6fb6d8">BOUNDARY</text>
+  <text class="sans" x="378" y="53" text-anchor="middle" font-size="12" fill="#8b949e">경계에서 걸러내기</text>
+  <text class="mono" x="553" y="34" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#c6e478">CORE</text>
+  <text class="sans" x="553" y="53" text-anchor="middle" font-size="12" fill="#8b949e">핵심 처리</text>
+  <text class="mono" x="728" y="34" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#c792ea">OUTPUT</text>
+  <text class="sans" x="728" y="53" text-anchor="middle" font-size="12" fill="#8b949e">저장 · 전달</text>
+  <text class="mono" x="903" y="34" text-anchor="middle" font-size="11.5" font-weight="700" letter-spacing="1.6" fill="#ff7b72">FAILURE PATH</text>
+  <text class="sans" x="903" y="53" text-anchor="middle" font-size="12" fill="#8b949e">실패 · 이력 경로</text>
+  <path d="M24 68 H976" stroke="#262d36"/>
+  <text class="sans" x="24" y="110" font-size="15" font-weight="700" fill="#fff">U-sto</text><text class="mono" x="24" y="128" font-size="10" fill="#8b949e">Public Data · EAM</text>
+  <g class="card"><rect x="128" y="84" width="150" height="58" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="203" y="109.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">조달청 OpenAPI</text><text class="mono" x="203" y="128.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">G2B</text></g>
+  <g class="card"><rect x="303" y="84" width="150" height="58" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="378" y="109.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">변환 · 중복 제거</text><text class="mono" x="378" y="128.5" text-anchor="middle" font-size="11.5" fill="#6fb6d8">G2bStg</text></g>
+  <path d="M291 113 H302" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="478" y="84" width="150" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="553" y="109.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">Staging 병합</text><text class="mono" x="553" y="128.5" text-anchor="middle" font-size="11.5" fill="#c6e478">UPDATE + INSERT</text></g>
+  <path d="M466 113 H477" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="653" y="84" width="150" height="58" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="728" y="109.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">자산 마스터</text><text class="mono" x="728" y="128.5" text-anchor="middle" font-size="11.5" fill="#c792ea">MySQL · Flyway</text></g>
+  <path d="M641 113 H652" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="828" y="84" width="150" height="58" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="903" y="109.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">Sync History</text><text class="mono" x="903" y="128.5" text-anchor="middle" font-size="11.5" fill="#ff7b72">REQUIRES_NEW</text></g>
+  <text class="sans" x="24" y="208" font-size="15" font-weight="700" fill="#fff">W브릿지</text><text class="mono" x="24" y="226" font-size="10" fill="#8b949e">AI Report</text>
+  <g class="card"><rect x="128" y="182" width="150" height="58" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="203" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">AI 응답</text><text class="mono" x="203" y="226.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">AI API</text></g>
+  <g class="card"><rect x="303" y="182" width="150" height="58" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="378" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">파싱 · 형식 점검</text><text class="mono" x="378" y="226.5" text-anchor="middle" font-size="11.5" fill="#6fb6d8">response contract</text></g>
+  <path d="M291 211 H302" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="478" y="182" width="150" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="553" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">호출 · 저장 분리</text><text class="mono" x="553" y="226.5" text-anchor="middle" font-size="11.5" fill="#c6e478">CompletableFuture</text></g>
+  <path d="M466 211 H477" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="653" y="182" width="150" height="58" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="728" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">리포트 · 추천</text><text class="mono" x="728" y="226.5" text-anchor="middle" font-size="11.5" fill="#c792ea">MyBatis</text></g>
+  <path d="M641 211 H652" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="828" y="182" width="150" height="58" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="903" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">빈 결과 허용</text><text class="mono" x="903" y="226.5" text-anchor="middle" font-size="11.5" fill="#ff7b72">no padding fallback</text></g>
+  <text class="sans" x="24" y="306" font-size="15" font-weight="700" fill="#fff">DOVIS</text><text class="mono" x="24" y="324" font-size="10" fill="#8b949e">AI Agent</text>
+  <g class="card"><rect x="128" y="280" width="150" height="58" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="203" y="305.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">방문자 질문</text><text class="mono" x="203" y="324.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">max 300 chars</text></g>
+  <g class="card"><rect x="303" y="280" width="150" height="58" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="378" y="305.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">입력 정제 · 제한</text><text class="mono" x="378" y="324.5" text-anchor="middle" font-size="11.5" fill="#6fb6d8">1.5s throttle</text></g>
+  <path d="M291 309 H302" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="478" y="280" width="150" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="553" y="305.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">RAG 파이프라인</text><text class="mono" x="553" y="324.5" text-anchor="middle" font-size="11.5" fill="#c6e478">Spring AI</text></g>
+  <path d="M466 309 H477" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="653" y="280" width="150" height="58" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="728" y="305.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">3D 코어 응답</text><text class="mono" x="728" y="324.5" text-anchor="middle" font-size="11.5" fill="#c792ea">Three.js</text></g>
+  <path d="M641 309 H652" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="828" y="280" width="150" height="58" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="903" y="305.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">키워드 지식 베이스</text><text class="mono" x="903" y="324.5" text-anchor="middle" font-size="11.5" fill="#ff7b72">client fallback</text></g>
+  <text class="sans" x="24" y="404" font-size="15" font-weight="700" fill="#fff">Kids Friends</text><text class="mono" x="24" y="422" font-size="10" fill="#8b949e">Physical AI</text>
+  <g class="card"><rect x="128" y="378" width="150" height="58" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="203" y="403.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">센서 허브</text><text class="mono" x="203" y="422.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">Raspberry Pi</text></g>
+  <g class="card"><rect x="303" y="378" width="150" height="58" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="378" y="403.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">이벤트 계약</text><text class="mono" x="378" y="422.5" text-anchor="middle" font-size="11.5" fill="#6fb6d8">eventType · payload</text></g>
+  <path d="M291 407 H302" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="478" y="378" width="150" height="58" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="553" y="403.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">Spring Boot 중계</text><text class="mono" x="553" y="422.5" text-anchor="middle" font-size="11.5" fill="#c6e478">/api/sensor-events</text></g>
+  <path d="M466 407 H477" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="653" y="378" width="150" height="58" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="728" y="403.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">로봇 앱 방송</text><text class="mono" x="728" y="422.5" text-anchor="middle" font-size="11.5" fill="#c792ea">WebSocket</text></g>
+  <path d="M641 407 H652" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <g class="card"><rect x="828" y="378" width="150" height="58" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="903" y="403.5" text-anchor="middle" font-size="14" font-weight="600" fill="#e6edf3">Arduino 백업 허브</text><text class="mono" x="903" y="422.5" text-anchor="middle" font-size="11.5" fill="#ff7b72">KF_AD</text></g>
+  <rect x="699.8" y="149" width="56.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="728" y="161" text-anchor="middle" font-size="11" fill="#ff9b94">이력 분리</text>
+  <rect x="699.8" y="247" width="56.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="728" y="259" text-anchor="middle" font-size="11" fill="#ff9b94">후보 없음</text>
+  <rect x="683.4" y="345" width="89.2" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="728" y="357" text-anchor="middle" font-size="11" fill="#ff9b94">오류 · timeout</text>
+  <rect x="692.1" y="443" width="61.7" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="723" y="455" text-anchor="middle" font-size="11" fill="#ff9b94">Pi 고장 시</text>
+</svg>

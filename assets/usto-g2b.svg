@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 272" role="img" aria-labelledby="t d">
+  <title id="t">U-sto G2B 동기화 파이프라인</title>
+  <desc id="d">스케줄러 또는 수동 호출이 조달청 OpenAPI를 페이지 단위로 수집합니다. 도메인으로 변환해 식별코드 기준 중복을 제거하고 Staging 테이블에 batch insert합니다. 부모, 자식 테이블 순으로 UPDATE JOIN과 INSERT로 병합하고 SyncResult를 만듭니다. 수동 동기화 경로는 Sync History를 별도 빈의 REQUIRES_NEW 트랜잭션으로 기록합니다.</desc>
+  <style>
+    .sans { font-family: "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { stroke-dasharray: 7 93; animation: flow 3.2s linear infinite; }
+    .ants { stroke-dasharray: 4 5; animation: ants 1.4s linear infinite; }
+    @keyframes flow { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+    @keyframes ants { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .ants { animation: none; } .pulse { display: none; } }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#8b949e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="af" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="#ff7b72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect x=".5" y=".5" width="899" height="271" rx="14" fill="#0a0d12" stroke="#262d36"/>
+  <path d="M210 75 L246 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M210 75 L246 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.00s"/>
+  <path d="M432 75 L468 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M432 75 L468 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-0.53s"/>
+  <path d="M654 75 L690 75" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M654 75 L690 75" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.06s"/>
+  <path d="M783 110 L783 135 Q783 143 775 143 L125 143 Q117 143 117 151 L117 176" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M783 110 L783 135 Q783 143 775 143 L125 143 Q117 143 117 151 L117 176" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-1.59s"/>
+  <path d="M210 211 L246 211" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M210 211 L246 211" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.12s"/>
+  <path d="M432 211 L468 211" fill="none" stroke="#4a5561" stroke-width="1.4" marker-end="url(#a)"/>
+  <path class="pulse" pathLength="100" d="M432 211 L468 211" fill="none" stroke="#c6e478" stroke-width="2" stroke-linecap="round" style="animation-delay:-2.65s"/>
+  <path class="ants" d="M654 211 L690 211" fill="none" stroke="#ff7b72" stroke-opacity=".85" marker-end="url(#af)"/>
+  <text class="sans" x="24" y="27" font-size="11.5" font-weight="600" fill="#8b949e">수집 · 정제</text><text class="sans" x="24" y="163" font-size="11.5" font-weight="600" fill="#8b949e">병합 · 기록</text>
+  <g class="card"><rect x="24" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="117" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">매일 00:10</text><text class="mono" x="117" y="82.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">@Scheduled</text><text class="mono" x="117" y="98.5" text-anchor="middle" font-size="11.5" fill="#ecc48d">PUT /api/g2b/sync</text></g>
+  <g class="card"><rect x="246" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#ecc48d" stroke-opacity=".65"/><text class="sans" x="339" y="71.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">조달청 OpenAPI</text><text class="sans" x="339" y="90.5" text-anchor="middle" font-size="12" fill="#ecc48d">페이지 순회 수집</text></g>
+  <g class="card"><rect x="468" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#6fb6d8" stroke-opacity=".65"/><text class="sans" x="561" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">도메인 변환</text><text class="sans" x="561" y="82.5" text-anchor="middle" font-size="12" fill="#6fb6d8">Null 제거</text><text class="sans" x="561" y="98.5" text-anchor="middle" font-size="12" fill="#6fb6d8">식별코드 기준 중복 제거</text></g>
+  <g class="card"><rect x="690" y="40" width="186" height="70" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="783" y="63.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">TB_G2B_STG</text><text class="sans" x="783" y="82.5" text-anchor="middle" font-size="12" fill="#c6e478">비운 뒤 batch insert</text><text class="sans" x="783" y="98.5" text-anchor="middle" font-size="12" fill="#c6e478">100건 단위</text></g>
+  <g class="card"><rect x="24" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="117" y="199.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">부모 테이블 병합</text><text class="mono" x="117" y="218.5" text-anchor="middle" font-size="11.5" fill="#c6e478">TB_G2B001M</text><text class="mono" x="117" y="234.5" text-anchor="middle" font-size="11.5" fill="#c6e478">UPDATE JOIN + INSERT</text></g>
+  <g class="card"><rect x="246" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c6e478" stroke-opacity=".65"/><text class="sans" x="339" y="199.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">자식 테이블 병합</text><text class="mono" x="339" y="218.5" text-anchor="middle" font-size="11.5" fill="#c6e478">TB_G2B001D</text><text class="mono" x="339" y="234.5" text-anchor="middle" font-size="11.5" fill="#c6e478">UPDATE JOIN + INSERT</text></g>
+  <g class="card"><rect x="468" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#c792ea" stroke-opacity=".65"/><text class="sans" x="561" y="207.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">SyncResult</text><text class="sans" x="561" y="226.5" text-anchor="middle" font-size="12" fill="#c792ea">수집 · 중복 · 신규 · 수정 건수</text></g>
+  <g class="card"><rect x="690" y="176" width="186" height="70" rx="9" fill="#11161d" stroke="#ff7b72" stroke-opacity=".65" stroke-dasharray="5 4"/><text class="sans" x="783" y="199.5" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Sync History</text><text class="sans" x="783" y="218.5" text-anchor="middle" font-size="12" fill="#ff7b72">별도 빈</text><text class="mono" x="783" y="234.5" text-anchor="middle" font-size="11.5" fill="#ff7b72">REQUIRES_NEW</text></g>
+  <rect x="397.8" y="134" width="104.4" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="450" y="146" text-anchor="middle" font-size="11" fill="#aab4bf">Staging 적재 완료</text>
+  <rect x="638.4" y="156" width="67.2" height="16" rx="3" fill="#0a0d12"/>
+  <text class="sans" x="672" y="168" text-anchor="middle" font-size="11" fill="#ff9b94">수동 동기화</text>
+</svg>
